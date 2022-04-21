@@ -12,6 +12,7 @@ input {
     font-weight: bold;
     font-size: 23px;
 }
+
 .createQuizz{
     display: flex;
     align-items: center;
@@ -68,6 +69,6 @@ input {
     font-style: italic;
 }
 
-
-
-
+.hidden {
+    display: none;
+}

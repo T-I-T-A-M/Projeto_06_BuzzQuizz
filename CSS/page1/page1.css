@@ -77,8 +77,6 @@ main h6 {
 
 .createQuizBox:hover {
     background-color: #f5f5f5b2;
-    justify-content: center;
-    display:none;
 }
 
 .createQuizBox p {
@@ -180,8 +178,4 @@ main li a {
 
 main li a:hover {
     text-decoration: underline;
-}
-
-.hidden {
-    display: none;
 }

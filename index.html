@@ -8,9 +8,9 @@
     <title>Projeto 06 - BuzzQuizz</title>
     <link rel="shortcut icon" href="images/icon.ico" type="image/x-icon">
 
-    <link rel="stylesheet" href="CSS/reset.css">
-    <link rel="stylesheet" href="CSS/styles.css">
-    <link rel="stylesheet" href="CSS/page3-1.css">
+    <link rel="stylesheet" href="CSS/page1/reset.css">
+    <link rel="stylesheet" href="CSS/page1/page1.css">
+    <link rel="stylesheet" href="CSS/page3/page3-1.css">
 </head>
 <body>
     <header>
@@ -18,7 +18,8 @@
             <h1>BuzzQuizz</h1>
         </a>
     </header>
-    <main>
+    <main class="page1">
+        <!-- PAGE1: Sessão de Criação-->
         <section class="createQuizBox">
             <p>Você não criou nenhum quizz ainda :(</p>
             <span class="click button">Criar Quizz</span>
@@ -59,10 +60,12 @@
                 </li>       
             </ul>
         </section>
-
-        <!-- Tela de Criação de Quizz  -->
-
-        <section class ="createQuizz">
+    </main>
+    <main class="page2">
+    </main>
+    <main class="page3">
+<!-- PAGE3-1: Tela de Criação de Quizz  -->
+        <section class ="hidden createQuizz">
             <section class ="start"> 
                 <p class="titles"> Comece pelo começo </p>
                 <div class ="create-questions-box">
@@ -75,17 +78,15 @@
                 <button class="next" onclick="verifyQuizzCreation()"> Prosseguir para criar perguntas</button>
             </section>
 
-        </section>
-
-        
+        </section>        
     </main>
     <footer>
 
     </footer>
 
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js%22%3E"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js%22%3E"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js%22%3E"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min"></script>
     <script src="JS/scripts.js"></script>
 </body>
 </html>
