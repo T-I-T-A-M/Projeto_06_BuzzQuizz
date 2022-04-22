@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="CSS/page1/reset.css">
     <link rel="stylesheet" href="CSS/page1/page1.css">
     <link rel="stylesheet" href="CSS/page3/page3-1.css">
+    <link rel="stylesheet" href="CSS/page3/page3-2.css">
 </head>
 <body>
     <header>
@@ -18,25 +19,23 @@
             <h1>BuzzQuizz</h1>
         </a>
     </header>
-    <main class="page1">
+    <main class="pageOne">
         <!-- PAGE1: Sessão de Criação-->
         <section class="createQuizBox">
             <p>Você não criou nenhum quizz ainda :(</p>
-            <span class="click button" onclick="createQuizz()">Criar Quizz</span>
+            <span class="click button" onclick="showPage3_1()">Criar Quizz</span>
         </section>
         <section class="myQuizzesContainer">
             <span>
                 <h6>Seus Quizzes</h6>
-                <ion-icon class="click" name="add-circle" onclick="createQuizz()"></ion-icon>
+                <ion-icon class="click" name="add-circle" onclick="showPage3_1()"></ion-icon>
             </span>
 
             <ul class="listQuizz">
-                <li class="click Quizz" onclick="openQuizz()">
-                    <p>O Shenlong é o bixão memo doido! Brabissimo esse dagrãozasso...</p>         
+                <li class="click Quizz" onclick="openQuizz(this)">
+                    <p></p>
+                    <img src="">
                 </li>                
-                <li class="click Quizz" onclick="openQuizz()">
-                    <p>O Shenlong é o bixão memo doido! Brabissimo esse dagrãozasso...</p>         
-                </li>                 
             </ul>
         </section>
         <section class="allQuizzesContainer">
@@ -44,24 +43,14 @@
                 <h6>Todos os Quizzes</h6>
             </span>
             <ul class="listQuizz">
-                <li class="click Quizz" onclick="openQuizz()">
-                    <p>O Shenlong é o bixão memo doido! Brabissimo esse dagrãozasso...</p>         
-                </li>
-                <li class="click Quizz" onclick="createQuizz()">
-                    <p>O Shenlong é o bixão memo doido! Brabissimo esse dagrãozasso...</p>
-                    <img src="https://cdn.awsli.com.br/600x450/1206/1206083/produto/124981325/ad7168e9d8.jpg">
-                </li>
-                <li class="click Quizz" onclick="openQuizz()">
-                    <p>O Shenlong é o bixão memo doido! Brabissimo esse dagrãozasso...</p>         
-                </li>      
             </ul>
         </section>
     </main>
-    <main class="page2 hidden">
+    <main class="pageTwo">
     </main>
-    <main class="page3 hidden">
+    <main class="pageThree">
 <!-- PAGE3-1: Tela de Criação de Quizz  -->
-        <section class ="createQuizz">
+        <section class ="createQuizz hidden">
             <section class ="start"> 
                 <p class="titles"> Comece pelo começo </p>
                 <div class ="create-questions-box">
@@ -73,7 +62,20 @@
                 </div>
                 <button class="next" onclick="verifyQuizzCreation()"> Prosseguir para criar perguntas</button>
             </section>
-        </section>        
+        </section>   
+        
+ <!-- PAGE3-2: Tela de Criação de Perguntas Quizz  -->
+ <section class ="createQuestions hidden">
+    <section class ="start"> 
+        <p class="titles"> Cria suas perguntas </p>
+        <ul class ="create-questions-box">
+
+            
+        </ul>
+        <button class="next" onclick="verifyQuizzCreation()"> Prosseguir para criar níveis</button>
+    </section>
+</section>  
+
     </main>
     <footer>
 
