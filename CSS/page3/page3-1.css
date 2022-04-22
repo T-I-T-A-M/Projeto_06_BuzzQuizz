@@ -62,6 +62,7 @@ input {
     height: 54px;
     padding:5px;
     font-size: 23px;
+    cursor:pointer;
 }
 
 ::placeholder {
