@@ -72,7 +72,13 @@ function renderQuestionForms (){
     
     for (let i=0; i < quizzQuestions; i++ )
     QuestionBoxs.innerHTML += `
-    <li class ="questionText${i}"
+    <li class ="questionNumber${i}">
+    
+    <p class ="title">Pergunta ${i} </p>
+    <input class ="questionNumber${i}Text placeholder="Texto da pergunta></input>
+    
+    
+    </li>
 
 }
 
