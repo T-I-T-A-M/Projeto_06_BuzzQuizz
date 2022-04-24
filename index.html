@@ -31,22 +31,27 @@
                 <ion-icon class="click" name="add-circle" onclick="showPage3_1()"></ion-icon>
             </span>
 
-            <ul class="listQuizz">
+            <ul class="myListQuizz">
                 <li class="click Quizz" onclick="openQuizz(this)">
                     <p></p>
                     <img src="">
-                </li>                
+                </li>
             </ul>
         </section>
         <section class="allQuizzesContainer">
             <span>
                 <h6>Todos os Quizzes</h6>
             </span>
-            <ul class="listQuizz">
+            <ul class="allListQuizz">
+                <li class="click Quizz" onclick="openQuizz(this)">
+                    <p>TITULO</p>
+                    <img src="">
+                </li>
             </ul>
         </section>
     </main>
-    <main class="pageTwo">
+    <main class="pageTwo hidden">
+        SOMENTE A PAGINA 2
     </main>
     <main class="pageThree">
 <!-- PAGE3-1: Tela de Criação de Quizz  -->
@@ -65,20 +70,19 @@
         </section>   
         
  <!-- PAGE3-2: Tela de Criação de Perguntas Quizz  -->
- <section class ="createQuestions hidden">
-    <section class ="start"> 
-        <p class="titles"> Cria suas perguntas </p>
-        <ul class ="create-questions-box">
+        <section class ="createQuestions hidden">
+            <section class ="start"> 
+                <p class="titles"> Cria suas perguntas </p>
+                <ul class ="create-questions-box">
 
             
-        </ul>
-        <button class="next" onclick="verifyQuizzCreation()"> Prosseguir para criar níveis</button>
-    </section>
-</section>  
-
+                </ul>
+                <button class="next" onclick="verifyQuizzCreation()"> Prosseguir para criar níveis</button>
+            </section>
+        </section>
     </main>
     <footer>
-
+        <p>Desenvolvido por: <a href="https://github.com/dorigoluiz" target="_blank"><strong>NANO</strong></a> & <a href="https://github.com/T-I-T-A-M/" target="_blank"><strong>TITAM</strong></a>.</p>
     </footer>
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm"></script>

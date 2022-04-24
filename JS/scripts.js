@@ -73,5 +73,10 @@ function renderQuestionForms (){
     for (let i=0; i < quizzQuestions; i++ )
     QuestionBoxs.innerHTML += `
     <li class ="questionText${i}"`
+}
 
+function openQuizz(){
+    const p1hide = document.querySelector(".pageOne").classList.add("hidden");
+    const p3hide = document.querySelector(".pageThree").classList.add("hidden");
+    const p2show = document.querySelector(".pageTwo").classList.remove("hidden");
 }
