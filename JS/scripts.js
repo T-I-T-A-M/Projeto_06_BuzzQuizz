@@ -1,10 +1,10 @@
 console.log ("tamo aqui")
 
-const TITTLEMINSIZE = 20
-const TITTLEMAXSIZE = 65
-const QUESTIONMINSIZE = 3
-const LEVELMINSIZE = 2
-const API = "https://mock-api.driven.com.br/api/v6/buzzquizz"
+const TITTLEMINSIZE = 20;
+const TITTLEMAXSIZE = 65;
+const QUESTIONMINSIZE = 3;
+const LEVELMINSIZE = 2;
+const API = "https://mock-api.driven.com.br/api/v6/buzzquizz";
 
 let quizzTittle
 let quizzURL
@@ -38,13 +38,13 @@ function verifyQuizzCreation (){
 
 function showPage1 (){
     console.log("Pagina 1 Aaparecendo")
-    document.querySelector(".page1").classList.remove("hidden")
+    document.querySelector(".pageOne").classList.remove("hidden")
 }
 
 
 function hidePage1 (){
     console.log("Pagina 1 Sumindo")
-    document.querySelector(".page1").classList.add("hidden")
+    document.querySelector(".pageOne").classList.add("hidden")
 }
 
 
@@ -65,20 +65,36 @@ function showPage3_2 (){
     hidePage3_1() 
     console.log("Pagina 3_2 Aparecendo")
     document.querySelector(".createQuestions").classList.remove("hidden")
+    renderQuestionForms()
 }
 
 function renderQuestionForms (){
+    console.log("renderizando formulario de perguntas")
     const QuestionBoxs = document.querySelector("ul.create-questions-box")
     
-    for (let i=0; i < quizzQuestions; i++ )
+    for (let i=1; i <= quizzQuestions; i++ ){
     QuestionBoxs.innerHTML += `
-    <li class ="questionNumber${i}">
+    <li class ="questionNumber$">
     
-    <p class ="title">Pergunta ${i} </p>
-    <input class ="questionNumber${i}Text placeholder="Texto da pergunta></input>
-    
-    
-    </li>
+                <p class ="title-form">Pergunta 1</p>
+                <input type="text" class="question-text" placeholder="Texto da Pergunta"> </input>
+                <input type="text" class="question-background-color" placeholder="Cor de fundo da pergunta"> </input>
+
+                <p class ="title-form">Resposta correta </p>
+                <input type="text" class="correctAnswer-${i}" placeholder="Reposta correta"> </input>
+                <input type="text" class="correctImage-${i}" placeholder="URL da imagem"> </input>
+
+                <p class ="title-form">Respostas Incorretas</p>
+                <input type="text" class="incorrectAnswer-${i}-One" placeholder="Resposta incorreta 1"> </input>
+                <input type="text" class="incorrect incorrectImage-${i}-One" placeholder="URL da imagem 1"> </input>
+
+                <input type="text" class="incorrectAnswer-${i}-Two" placeholder="Resposta incorreta 2"> </input>
+                <input type="text" class="incorrect incorrectImage-${i}-Two" placeholder="URL da imagem 2"> </input>
+
+                <input type="text" class="incorrectAnswer-${i}-Three" placeholder="Resposta incorreta 3"> </input>
+                <input type="text" class="incorrect incorrectImage-${i}-Three" placeholder="URL da imagem 3"> </input>
+                
+    </li>`
+    }
 
 }
-

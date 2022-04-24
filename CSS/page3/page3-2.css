@@ -3,3 +3,31 @@
     justify-content: center;
 }
 
+.hidden {
+    display: none;
+}
+
+
+
+.create-questions-box li{
+height: auto;
+width: 600px;
+background-color: #FFFFFF;
+display:flex;
+flex-direction: column;
+align-items: flex-start;
+justify-content: start;
+padding: 15px;
+}
+
+.create-questions-box p{
+    font-weight: bold;
+    font-size: 23px;
+    display: flex;
+    left: 100px;
+    margin: 16px 0 16px 4px;
+}
+
+.incorrect {
+    margin-bottom: 20px;
+}
