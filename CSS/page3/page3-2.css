@@ -3,9 +3,6 @@
     justify-content: center;
 }
 
-.hidden {
-    display: none;
-}
 
 
 
@@ -30,4 +27,22 @@ padding: 15px;
 
 .incorrect {
     margin-bottom: 20px;
+}
+
+
+.start .collapsible {
+    background-color: #FFFFFF;
+    color: black;
+    display:flex;
+    padding: 0 19px 0 19px;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0px;
+    width: 100%;
+    font-weight: bold;
+}
+
+
+.hidden {
+    display: none !important;
 }

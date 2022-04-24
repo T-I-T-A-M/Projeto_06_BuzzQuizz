@@ -60,7 +60,7 @@
                     <input class="quizz-levels" placeholder ="Níveis do seu quizz"></input>
                     
                 </div>
-                <button class="next" onclick="verifyQuizzCreation()"> Prosseguir para criar perguntas</button>
+                <button class="next-to-createQuestions" onclick="verifyQuizzCreation()"> Prosseguir para criar perguntas</button>
             </section>
         </section>   
         
@@ -69,12 +69,12 @@
     <section class ="start"> 
         <p class="titles"> Crie suas perguntas </p>
         <ul class ="create-questions-box">
-
+            <button class ="collapsible" onclick ="colapse()">Pergunta 1</button>
             <li class ="questionNumber$">
-    
-                <p class ="title-form">Pergunta 1</p>
-                <input type="text" class="question-text" placeholder="Texto da Pergunta"> </input>
-                <input type="text" class="question-background-color" placeholder="Cor de fundo da pergunta"> </input>
+
+
+                <input type="text" class="question-text-${i}" placeholder="Texto da Pergunta"> </input>
+                <input type="text" class="question-background-color-${i}" placeholder="Cor de fundo da pergunta"> </input>
 
                 <p class ="title-form">Resposta correta </p>
                 <input type="text" class="correctAnswer-${i}" placeholder="Reposta correta"> </input>
@@ -89,12 +89,46 @@
 
                 <input type="text" class="incorrectAnswer-${i}-Three" placeholder="Resposta incorreta 3"> </input>
                 <input type="text" class="incorrect incorrectImage-${i}-Three" placeholder="URL da imagem 3"> </input>
-                </li>
+            </li>
             
         </ul>
-        <button class="next" onclick="verifyQuizzCreation()"> Prosseguir para criar níveis</button>
+        <button class="next-to-createLevels" onclick="verifyQuizzCreation()"> Prosseguir para criar níveis</button>
     </section>
-</section>  
+</section> 
+<!-- PAGE3-3: Tela de Criação de Niveis Quizz  -->
+<section class ="createLevels hidden">
+    <section class ="start"> 
+        <p class="titles"> Crie suas perguntas </p>
+        <ul class ="create-levels-box">
+
+            <button class ="collapsible" onclick ="colapse()">Nivel 1</button>
+            <li class ="levelNumber$">
+
+                <input type="text" class="level-title-${i}" placeholder="Título do nível"> </input>
+                <input type="text" class="min-score-${i}" placeholder="% de acerto minima"> </input>
+                <input type="text" class="level-URL-Image-${i}" placeholder="URL da imagem do nível"> </input>
+                <input type="text" class="level-description-${i}" placeholder="descrição do nível"> </input>
+
+            </li>
+            
+        </ul>
+
+        <button class="next-to-quizzReady" onclick="verifyQuizzCreation()"> Finalizar Quizz</button>
+    </section>
+</section>
+
+<!-- PAGE3-4: Tela de Criação de Quizz Pronto -->
+<section class ="quizzSucess">
+    <section class ="start"> 
+        <p class="titles"> Seu quizz está pronto! </p>
+        <img src="quizzURL" alt="">
+
+
+        <button class="start-quizz" onclick="verifyQuizzCreation()">Acessar Quizz</button>
+        <button class="home" onclick="verifyQuizzCreation()">voltar para home</button>
+    </section>
+</section>
+
 
     </main>
     <footer>

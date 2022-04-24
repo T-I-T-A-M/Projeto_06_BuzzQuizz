@@ -68,6 +68,7 @@ function showPage3_2 (){
     renderQuestionForms()
 }
 
+
 function renderQuestionForms (){
     console.log("renderizando formulario de perguntas")
     const QuestionBoxs = document.querySelector("ul.create-questions-box")
@@ -76,25 +77,32 @@ function renderQuestionForms (){
     QuestionBoxs.innerHTML += `
     <li class ="questionNumber$">
     
-                <p class ="title-form">Pergunta 1</p>
-                <input type="text" class="question-text" placeholder="Texto da Pergunta"> </input>
-                <input type="text" class="question-background-color" placeholder="Cor de fundo da pergunta"> </input>
+    <button class ="collapsible" onclick ="colapse()">Pergunta 1</button>
+    <li class ="questionNumber$">
 
-                <p class ="title-form">Resposta correta </p>
-                <input type="text" class="correctAnswer-${i}" placeholder="Reposta correta"> </input>
-                <input type="text" class="correctImage-${i}" placeholder="URL da imagem"> </input>
 
-                <p class ="title-form">Respostas Incorretas</p>
-                <input type="text" class="incorrectAnswer-${i}-One" placeholder="Resposta incorreta 1"> </input>
-                <input type="text" class="incorrect incorrectImage-${i}-One" placeholder="URL da imagem 1"> </input>
+        <input type="text" class="question-text-${i}" placeholder="Texto da Pergunta"> </input>
+        <input type="text" class="question-background-color-${i}" placeholder="Cor de fundo da pergunta"> </input>
 
-                <input type="text" class="incorrectAnswer-${i}-Two" placeholder="Resposta incorreta 2"> </input>
-                <input type="text" class="incorrect incorrectImage-${i}-Two" placeholder="URL da imagem 2"> </input>
+        <p class ="title-form">Resposta correta </p>
+        <input type="text" class="correctAnswer-${i}" placeholder="Reposta correta"> </input>
+        <input type="text" class="correctImage-${i}" placeholder="URL da imagem"> </input>
 
-                <input type="text" class="incorrectAnswer-${i}-Three" placeholder="Resposta incorreta 3"> </input>
-                <input type="text" class="incorrect incorrectImage-${i}-Three" placeholder="URL da imagem 3"> </input>
-                
+        <p class ="title-form">Respostas Incorretas</p>
+        <input type="text" class="incorrectAnswer-${i}-One" placeholder="Resposta incorreta 1"> </input>
+        <input type="text" class="incorrect incorrectImage-${i}-One" placeholder="URL da imagem 1"> </input>
+
+        <input type="text" class="incorrectAnswer-${i}-Two" placeholder="Resposta incorreta 2"> </input>
+        <input type="text" class="incorrect incorrectImage-${i}-Two" placeholder="URL da imagem 2"> </input>
+
+        <input type="text" class="incorrectAnswer-${i}-Three" placeholder="Resposta incorreta 3"> </input>
+        <input type="text" class="incorrect incorrectImage-${i}-Three" placeholder="URL da imagem 3"> </input>
     </li>`
     }
 
+}
+
+
+function colapse (botao) {
+    botao
 }
