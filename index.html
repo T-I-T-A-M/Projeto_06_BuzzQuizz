@@ -19,7 +19,7 @@
             <h1>BuzzQuizz</h1>
         </a>
     </header>
-    <main class="pageOne hidden">
+    <main class="pageOne">
         <!-- PAGE1: Sessão de Criação-->
         <section class="createQuizBox">
             <p>Você não criou nenhum quizz ainda :(</p>
@@ -65,34 +65,13 @@
         </section>   
         
  <!-- PAGE3-2: Tela de Criação de Perguntas Quizz  -->
- <section class ="createQuestions">
+ <section class ="createQuestions hidden>
     <section class ="start"> 
         <p class="titles"> Crie suas perguntas </p>
         <ul class ="create-questions-box">
-            <button class ="collapsible" onclick ="colapse()">Pergunta 1</button>
-            <li class ="questionNumber$">
-
-
-                <input type="text" class="question-text-${i}" placeholder="Texto da Pergunta"> </input>
-                <input type="text" class="question-background-color-${i}" placeholder="Cor de fundo da pergunta"> </input>
-
-                <p class ="title-form">Resposta correta </p>
-                <input type="text" class="correctAnswer-${i}" placeholder="Reposta correta"> </input>
-                <input type="text" class="correctImage-${i}" placeholder="URL da imagem"> </input>
-
-                <p class ="title-form">Respostas Incorretas</p>
-                <input type="text" class="incorrectAnswer-${i}-One" placeholder="Resposta incorreta 1"> </input>
-                <input type="text" class="incorrect incorrectImage-${i}-One" placeholder="URL da imagem 1"> </input>
-
-                <input type="text" class="incorrectAnswer-${i}-Two" placeholder="Resposta incorreta 2"> </input>
-                <input type="text" class="incorrect incorrectImage-${i}-Two" placeholder="URL da imagem 2"> </input>
-
-                <input type="text" class="incorrectAnswer-${i}-Three" placeholder="Resposta incorreta 3"> </input>
-                <input type="text" class="incorrect incorrectImage-${i}-Three" placeholder="URL da imagem 3"> </input>
-            </li>
             
         </ul>
-        <button class="next-to-createLevels" onclick="verifyQuizzCreation()"> Prosseguir para criar níveis</button>
+        <button class="next-to-createLevels" onclick="verifyQuestionCreation()"> Prosseguir para criar níveis</button>
     </section>
 </section> 
 <!-- PAGE3-3: Tela de Criação de Niveis Quizz  -->
@@ -118,7 +97,7 @@
 </section>
 
 <!-- PAGE3-4: Tela de Criação de Quizz Pronto -->
-<section class ="quizzSucess">
+<section class ="quizzSucess hidden">
     <section class ="start"> 
         <p class="titles"> Seu quizz está pronto! </p>
         <img src="quizzURL" alt="">

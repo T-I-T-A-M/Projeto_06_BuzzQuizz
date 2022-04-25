@@ -73,11 +73,12 @@ function renderQuestionForms (){
     console.log("renderizando formulario de perguntas")
     const QuestionBoxs = document.querySelector("ul.create-questions-box")
     
+
     for (let i=1; i <= quizzQuestions; i++ ){
     QuestionBoxs.innerHTML += `
     <li class ="questionNumber$">
     
-    <button class ="collapsible" onclick ="colapse()">Pergunta 1</button>
+    <button class ="collapsible" onclick ="colapse()">Pergunta ${i}</button>
     <li class ="questionNumber$">
 
 
@@ -100,9 +101,34 @@ function renderQuestionForms (){
     </li>`
     }
 
+
+    
 }
 
+function verifyQuestionCreation (){
+
+
+    for ( let i=1; i<= quizzQuestions; i++){
+
+        let questionText = document.querySelector(`.question-text-${i}`).value
+        let questionBackgroundColor = document.querySelector(`.question-background-color-${i}`).value
+        let correctAnswer = document.querySelector(`.correctAnswer-${i}`).value
+        let correctImage = document.querySelector(`.correctImage-${i}`).value
+        let incorrectAnswer = document.querySelector(`.incorrectAnswer-${i}-One`).value
+
+        if ((questionText >= TITTLEMINSIZE)  && (questionBackgroundColor.contains("http")) &&  correctAnswer && correctImage && incorrectAnswer){
+
+            console.log ("Tudo certo no quizz questions")
+        } alert("As perguntas ainda não estão corretas") 
+        console.log ("As perguntas ainda não estão corretas")
+
+    }
+    
+
+}
 
 function colapse (botao) {
     botao
 }
+
+
