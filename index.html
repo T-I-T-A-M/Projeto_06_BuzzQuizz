@@ -10,6 +10,7 @@
 
     <link rel="stylesheet" href="CSS/page1/reset.css">
     <link rel="stylesheet" href="CSS/page1/page1.css">
+    <link rel="stylesheet" href="CSS/page2/page2.css">
     <link rel="stylesheet" href="CSS/page3/page3-1.css">
     <link rel="stylesheet" href="CSS/page3/page3-2.css">
 </head>
@@ -25,7 +26,7 @@
             <p>Você não criou nenhum quizz ainda :(</p>
             <span class="click button" onclick="showPage3_1()">Criar Quizz</span>
         </section>
-        <section class="myQuizzesContainer">
+        <section class="myQuizzesContainer hidden">
             <span>
                 <h6>Seus Quizzes</h6>
                 <ion-icon class="click" name="add-circle" onclick="showPage3_1()"></ion-icon>
@@ -51,7 +52,37 @@
         </section>
     </main>
     <main class="pageTwo hidden">
-        SOMENTE A PAGINA 2
+        <section class="tittle-img">
+            <h6>TESTANDO UM TITULO AQUI</h6>
+            <div class="black-mask">
+                <img src="https://www.pontofrio-imagens.com.br/html/conteudo-produto/1/55002767/assets/img/qualidade-4k.jpg"/>
+            </div>
+        </section>
+        <section class="theQuizz">
+            <div class="quizz-box">
+                <span class="question-box">
+                    <h6>O titulo do quizz vai ficar aqui!?</h6>
+                </span>
+                <ul class="images-box">
+                    <li class="box-img">
+                        <img src="https://s2.glbimg.com/nvjFq8VRjyrpdQqaOeywz-5DFwY=/e.glbimg.com/og/ed/f/original/2021/08/27/captura_de_tela_2021-08-27_as_11.01.15.png"/>
+                        <h5>Catiorríneo1</h5>
+                    </li>
+                    <li class="box-img">
+                        <img src="https://s2.glbimg.com/nvjFq8VRjyrpdQqaOeywz-5DFwY=/e.glbimg.com/og/ed/f/original/2021/08/27/captura_de_tela_2021-08-27_as_11.01.15.png"/>
+                        <h5>Catiorríneo2</h5>
+                    </li>
+                    <li class="box-img">
+                        <img src="https://s2.glbimg.com/nvjFq8VRjyrpdQqaOeywz-5DFwY=/e.glbimg.com/og/ed/f/original/2021/08/27/captura_de_tela_2021-08-27_as_11.01.15.png"/>
+                        <h5>Catiorríneo3</h5>
+                    </li>
+                    <li class="box-img">
+                        <img src="https://s2.glbimg.com/nvjFq8VRjyrpdQqaOeywz-5DFwY=/e.glbimg.com/og/ed/f/original/2021/08/27/captura_de_tela_2021-08-27_as_11.01.15.png"/>
+                        <h5>Catiorríneo4</h5>
+                    </li>
+                </ul>
+            </div>
+        </section>
     </main>
     <main class="pageThree">
 <!-- PAGE3-1: Tela de Criação de Quizz  -->
@@ -65,21 +96,76 @@
                     <input class="quizz-levels" placeholder ="Níveis do seu quizz"></input>
                     
                 </div>
-                <button class="next" onclick="verifyQuizzCreation()"> Prosseguir para criar perguntas</button>
+                <button class="next-to-createQuestions" onclick="verifyQuizzCreation()"> Prosseguir para criar perguntas</button>
             </section>
         </section>   
         
  <!-- PAGE3-2: Tela de Criação de Perguntas Quizz  -->
-        <section class ="createQuestions hidden">
-            <section class ="start"> 
-                <p class="titles"> Cria suas perguntas </p>
-                <ul class ="create-questions-box">
+ <section class ="createQuestions hidden">
+    <section class ="start"> 
+        <p class="titles"> Crie suas perguntas </p>
+        <ul class ="create-questions-box">
+            <button class ="collapsible" onclick ="colapse()">Pergunta 1</button>
+            <li class ="questionNumber$">
 
+
+                <input type="text" class="question-text-${i}" placeholder="Texto da Pergunta"> </input>
+                <input type="text" class="question-background-color-${i}" placeholder="Cor de fundo da pergunta"> </input>
+
+                <p class ="title-form">Resposta correta </p>
+                <input type="text" class="correctAnswer-${i}" placeholder="Reposta correta"> </input>
+                <input type="text" class="correctImage-${i}" placeholder="URL da imagem"> </input>
+
+                <p class ="title-form">Respostas Incorretas</p>
+                <input type="text" class="incorrectAnswer-${i}-One" placeholder="Resposta incorreta 1"> </input>
+                <input type="text" class="incorrect incorrectImage-${i}-One" placeholder="URL da imagem 1"> </input>
+
+                <input type="text" class="incorrectAnswer-${i}-Two" placeholder="Resposta incorreta 2"> </input>
+                <input type="text" class="incorrect incorrectImage-${i}-Two" placeholder="URL da imagem 2"> </input>
+
+                <input type="text" class="incorrectAnswer-${i}-Three" placeholder="Resposta incorreta 3"> </input>
+                <input type="text" class="incorrect incorrectImage-${i}-Three" placeholder="URL da imagem 3"> </input>
+            </li>
             
-                </ul>
-                <button class="next" onclick="verifyQuizzCreation()"> Prosseguir para criar níveis</button>
-            </section>
-        </section>
+        </ul>
+        <button class="next-to-createLevels" onclick="verifyQuizzCreation()"> Prosseguir para criar níveis</button>
+    </section>
+</section> 
+<!-- PAGE3-3: Tela de Criação de Niveis Quizz  -->
+<section class ="createLevels hidden">
+    <section class ="start"> 
+        <p class="titles"> Crie suas perguntas </p>
+        <ul class ="create-levels-box">
+
+            <button class ="collapsible" onclick ="colapse()">Nivel 1</button>
+            <li class ="levelNumber$">
+
+                <input type="text" class="level-title-${i}" placeholder="Título do nível"> </input>
+                <input type="text" class="min-score-${i}" placeholder="% de acerto minima"> </input>
+                <input type="text" class="level-URL-Image-${i}" placeholder="URL da imagem do nível"> </input>
+                <input type="text" class="level-description-${i}" placeholder="descrição do nível"> </input>
+
+            </li>
+            
+        </ul>
+
+        <button class="next-to-quizzReady" onclick="verifyQuizzCreation()"> Finalizar Quizz</button>
+    </section>
+</section>
+
+<!-- PAGE3-4: Tela de Criação de Quizz Pronto -->
+<section class ="quizzSucess hidden">
+    <section class ="start"> 
+        <p class="titles"> Seu quizz está pronto! </p>
+        <img src="quizzURL" alt="">
+
+
+        <button class="start-quizz" onclick="verifyQuizzCreation()">Acessar Quizz</button>
+        <button class="home" onclick="verifyQuizzCreation()">voltar para home</button>
+    </section>
+</section>
+
+
     </main>
     <footer>
         <p>Desenvolvido por: <a href="https://github.com/dorigoluiz" target="_blank"><strong>NANO</strong></a> & <a href="https://github.com/T-I-T-A-M/" target="_blank"><strong>TITAM</strong></a>.</p>

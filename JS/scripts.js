@@ -65,18 +65,44 @@ function showPage3_2 (){
     hidePage3_1() 
     console.log("Pagina 3_2 Aparecendo")
     document.querySelector(".createQuestions").classList.remove("hidden")
+    renderQuestionForms()
 }
+
 
 function renderQuestionForms (){
+    console.log("renderizando formulario de perguntas")
     const QuestionBoxs = document.querySelector("ul.create-questions-box")
     
-    for (let i=0; i < quizzQuestions; i++ )
+    for (let i=1; i <= quizzQuestions; i++ ){
     QuestionBoxs.innerHTML += `
-    <li class ="questionText${i}"`
+    <li class ="questionNumber$">
+    
+    <button class ="collapsible" onclick ="colapse()">Pergunta 1</button>
+    <li class ="questionNumber$">
+
+
+        <input type="text" class="question-text-${i}" placeholder="Texto da Pergunta"> </input>
+        <input type="text" class="question-background-color-${i}" placeholder="Cor de fundo da pergunta"> </input>
+
+        <p class ="title-form">Resposta correta </p>
+        <input type="text" class="correctAnswer-${i}" placeholder="Reposta correta"> </input>
+        <input type="text" class="correctImage-${i}" placeholder="URL da imagem"> </input>
+
+        <p class ="title-form">Respostas Incorretas</p>
+        <input type="text" class="incorrectAnswer-${i}-One" placeholder="Resposta incorreta 1"> </input>
+        <input type="text" class="incorrect incorrectImage-${i}-One" placeholder="URL da imagem 1"> </input>
+
+        <input type="text" class="incorrectAnswer-${i}-Two" placeholder="Resposta incorreta 2"> </input>
+        <input type="text" class="incorrect incorrectImage-${i}-Two" placeholder="URL da imagem 2"> </input>
+
+        <input type="text" class="incorrectAnswer-${i}-Three" placeholder="Resposta incorreta 3"> </input>
+        <input type="text" class="incorrect incorrectImage-${i}-Three" placeholder="URL da imagem 3"> </input>
+    </li>`
+    }
+
 }
 
-function openQuizz(){
-    const p1hide = document.querySelector(".pageOne").classList.add("hidden");
-    const p3hide = document.querySelector(".pageThree").classList.add("hidden");
-    const p2show = document.querySelector(".pageTwo").classList.remove("hidden");
+
+function colapse (botao) {
+    botao
 }

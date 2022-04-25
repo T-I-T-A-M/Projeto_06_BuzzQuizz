@@ -3,6 +3,46 @@
     justify-content: center;
 }
 
+
+
+
+.create-questions-box li{
+height: auto;
+width: 600px;
+background-color: #FFFFFF;
+display:flex;
+flex-direction: column;
+align-items: flex-start;
+justify-content: start;
+padding: 15px;
+}
+
+.create-questions-box p{
+    font-weight: bold;
+    font-size: 23px;
+    display: flex;
+    left: 100px;
+    margin: 16px 0 16px 4px;
+}
+
+.incorrect {
+    margin-bottom: 20px;
+}
+
+
+.start .collapsible {
+    background-color: #FFFFFF;
+    color: black;
+    display:flex;
+    padding: 0 19px 0 19px;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0px;
+    width: 100%;
+    font-weight: bold;
+}
+
+
 .hidden {
-    display: none;
+    display: none !important;
 }
