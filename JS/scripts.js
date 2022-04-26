@@ -272,7 +272,6 @@ function openQuizz(selectedQuizz){
             let answersQuestions = Quizz.data.questions
 
 
-
         document.querySelector("section.tittle-img").innerHTML =`
         <img class ="selectedQuizzImage" src="${selectedimage}"/>")`
 
@@ -284,7 +283,7 @@ function openQuizz(selectedQuizz){
 
 
         for (let i=0; i < selectedQuestions.length; i++){
-               for (let j=0; j < selectedQuestions.length; j++){
+               for (let j=0; j < selectedQuestions[j].answers.length; j++){
               
                 
             document.querySelector("div.quizz-box").innerHTML += `
@@ -292,21 +291,9 @@ function openQuizz(selectedQuizz){
             <div class="quizz-box">
                 
                 <ul class="images-box">
-                    <li class="box-img">
+                    <li class="box-img ${selectedQuestions[i].answers[j].isCorrectAnswer}">
                         <img src="${selectedQuestions[i].answers[j].image}"/>
-                        <h5>Catiorríneo1</h5>
-                    </li>
-                    <li class="box-img">
-                        <img src=""/>
-                        <h5>Catiorríneo2</h5>
-                    </li>
-                    <li class="box-img">
-                        <img src=""/>
-                        <h5>Catiorríneo3</h5>
-                    </li>
-                    <li class="box-img">
-                        <img src=""/>
-                        <h5>Catiorríneo4</h5>
+                        <h5>${selectedQuestions[i].answers[j].text}</h5>
                     </li>
                 </ul>
             </div>
