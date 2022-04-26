@@ -269,37 +269,43 @@ function openQuizz(selectedQuizz){
             let selectedimage = Quizz.data.image
             let selectedQuestions = Quizz.data.questions
             let selectedLevels = Quizz.data.levels
+            let answersQuestions = Quizz.data.questions
+
+
+
+        document.querySelector("section.tittle-img").innerHTML =`
+        <img class ="selectedQuizzImage" src="${selectedimage}"/>")`
 
         document.querySelector("section.theQuizz").innerHTML = `
-        <img class ="selectedQuizzImage" src="${selectedimage}"/>
         <span class="question-box">
         <h6>${selectedtitle}</h6>
         </span>
         <div class="quizz-box"> </div>`
 
+
         for (let i=0; i < selectedQuestions.length; i++){
-               
+               for (let j=0; j < selectedQuestions.length; j++){
               
                 
-            document.querySelector("div .quizz-box").innerHTML += `
+            document.querySelector("div.quizz-box").innerHTML += `
             
             <div class="quizz-box">
                 
                 <ul class="images-box">
                     <li class="box-img">
-                        <img src="https://s2.glbimg.com/nvjFq8VRjyrpdQqaOeywz-5DFwY=/e.glbimg.com/og/ed/f/original/2021/08/27/captura_de_tela_2021-08-27_as_11.01.15.png"/>
+                        <img src="${selectedQuestions[i].answers[j].image}"/>
                         <h5>Catiorríneo1</h5>
                     </li>
                     <li class="box-img">
-                        <img src="https://s2.glbimg.com/nvjFq8VRjyrpdQqaOeywz-5DFwY=/e.glbimg.com/og/ed/f/original/2021/08/27/captura_de_tela_2021-08-27_as_11.01.15.png"/>
+                        <img src=""/>
                         <h5>Catiorríneo2</h5>
                     </li>
                     <li class="box-img">
-                        <img src="https://s2.glbimg.com/nvjFq8VRjyrpdQqaOeywz-5DFwY=/e.glbimg.com/og/ed/f/original/2021/08/27/captura_de_tela_2021-08-27_as_11.01.15.png"/>
+                        <img src=""/>
                         <h5>Catiorríneo3</h5>
                     </li>
                     <li class="box-img">
-                        <img src="https://s2.glbimg.com/nvjFq8VRjyrpdQqaOeywz-5DFwY=/e.glbimg.com/og/ed/f/original/2021/08/27/captura_de_tela_2021-08-27_as_11.01.15.png"/>
+                        <img src=""/>
                         <h5>Catiorríneo4</h5>
                     </li>
                 </ul>
@@ -309,6 +315,5 @@ function openQuizz(selectedQuizz){
         }
 
 
-
     }
-}
+}}

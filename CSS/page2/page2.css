@@ -170,6 +170,15 @@
     word-wrap: break-word;
 }
 
+.selectedQuizzImage {
+    width:100%;
+    position:sticky;
+}
+
+
+
+
+
 @media (max-width: 759px) {
 
     .theQuizz {
