@@ -5,7 +5,7 @@ const TITTLEMAXSIZE = 65;
 const QUESTIONMINSIZE = 3;
 const LEVELMINSIZE = 2;
 const HEXADECIMALVALUE = 6;
-const API = "https://mock-api.driven.com.br/api/v6/buzzquizz";
+
 
 
 let quizzTittle
@@ -14,11 +14,9 @@ let quizzQuestions
 let quizzLevels
 
 
+getAllQuizz()
 
 
-
-
-// const promise = axios.get(`${API}/quizzes`)
 
 function verifyQuizzCreation (){
 
@@ -39,7 +37,7 @@ function verifyQuizzCreation (){
 }
 
 function showPage1 (){
-    console.log("Pagina 1 Aaparecendo")
+    console.log("Pagina 1 Aparecendo")
     document.querySelector(".pageOne").classList.remove("hidden")
 }
 
@@ -49,6 +47,11 @@ function hidePage1 (){
     document.querySelector(".pageOne").classList.add("hidden")
 }
 
+function showPage2 () {
+    hidePage1()
+    console.log ("Pagina 1 Desaparecendo")
+    document.querySelector(".pageTwo").classList.remove("hidden")
+}
 
 function showPage3_1 (){
     hidePage1()
@@ -220,7 +223,97 @@ function createButton () {
 }
 createButton();
 
-function openQuizz(){
-    document.querySelector(".pageOne").classList.add("hidden");
-    document.querySelector(".pageTwo").classList.remove("hidden");
+
+
+
+
+
+
+function getAllQuizz(){
+
+    let promise = axios.get("https://mock-api.driven.com.br/api/v6/buzzquizz/quizzes")
+    promise.then(renderAllQuizz)
+
+
+    function renderAllQuizz (Quizzes){
+        console.log("renderizando todos os quizzes")
+        console.log (Quizzes)
+
+        for (let i =0; i < Quizzes.data.length; i++){
+
+            quizzTittle = Quizzes.data[i].title
+            quizzURL = Quizzes.data[i].image
+            let quizzId = Quizzes.data[i].id
+
+            console.log("Laço para renderizar")
+            document.querySelector("ul.allListQuizz").innerHTML +=`
+            <li class="click Quizz" id="${quizzId}" onclick="openQuizz(this)">
+                <p>${quizzTittle}</p>
+                <img src="${quizzURL}">
+            </li>`
+
+    }
 }
+}
+
+function openQuizz(selectedQuizz){
+    showPage2()
+    console.log (selectedQuizz.id)
+
+    const promise = axios.get(`https://mock-api.driven.com.br/api/v6/buzzquizz/quizzes/${selectedQuizz.id}`)
+    promise.then(renderSelectedQuizz)
+
+    function renderSelectedQuizz (Quizz){
+        console.log("renderizando quizz selecionado")   
+        let selectedtitle = Quizz.data.title
+            let selectedimage = Quizz.data.image
+            let selectedQuestions = Quizz.data.questions
+            let selectedLevels = Quizz.data.levels
+            let answersQuestions = Quizz.data.questions
+
+
+
+        document.querySelector("section.tittle-img").innerHTML =`
+        <img class ="selectedQuizzImage" src="${selectedimage}"/>")`
+
+        document.querySelector("section.theQuizz").innerHTML = `
+        <span class="question-box">
+        <h6>${selectedtitle}</h6>
+        </span>
+        <div class="quizz-box"> </div>`
+
+
+        for (let i=0; i < selectedQuestions.length; i++){
+               for (let j=0; j < selectedQuestions.length; j++){
+              
+                
+            document.querySelector("div.quizz-box").innerHTML += `
+            
+            <div class="quizz-box">
+                
+                <ul class="images-box">
+                    <li class="box-img">
+                        <img src="${selectedQuestions[i].answers[j].image}"/>
+                        <h5>Catiorríneo1</h5>
+                    </li>
+                    <li class="box-img">
+                        <img src=""/>
+                        <h5>Catiorríneo2</h5>
+                    </li>
+                    <li class="box-img">
+                        <img src=""/>
+                        <h5>Catiorríneo3</h5>
+                    </li>
+                    <li class="box-img">
+                        <img src=""/>
+                        <h5>Catiorríneo4</h5>
+                    </li>
+                </ul>
+            </div>
+            `
+
+        }
+
+
+    }
+}}

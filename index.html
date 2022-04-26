@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="CSS/page2/page2.css">
     <link rel="stylesheet" href="CSS/page3/page3-1.css">
     <link rel="stylesheet" href="CSS/page3/page3-2.css">
-    <link rel="stylesheet" href="CSS/page3/page3-4.css">
 </head>
 <body>
     <header>
@@ -21,7 +20,7 @@
             <h1>BuzzQuizz</h1>
         </a>
     </header>
-    <main class="pageOne hidden">
+    <main class="pageOne">
         <!-- PAGE1: Sessão de Criação-->
         <section class="createQuizBox">
             <p>Você não criou nenhum quizz ainda :(</p>
@@ -42,45 +41,18 @@
                 <h6>Todos os Quizzes</h6>
             </span>
             <ul class="allListQuizz">
-                <li class="click Quizz" onclick="openQuizz(this)">
-                    <p>TITULO</p>
-                    <img src="">
                 </li>
             </ul>
         </section>
     </main>
-    <main class="pageTwo">
+    <main class="pageTwo hidden">
         <section class="tittle-img">
-            <h6></h6>
-            <div class="black-mask">
-                <img src=""/>
-            </div>
         </section>
         <section class="theQuizz">
-            <div class="quizz-box">
-                <span class="question-box">
-                    <h6></h6>
-                </span>
-                <ul class="images-box">
-                    <li class="box-img">
-                        <img src=""/>
-                        <h5></h5>
-                    </li>
-                    <li class="box-img">
-                        <img src=""/>
-                        <h5></h5>
-                    </li>
-                    <li class="box-img">
-                        <img src=""/>
-                        <h5></h5>
-                    </li>
-                    <li class="box-img">
-                        <img src=""/>
-                        <h5></h5>
-                    </li>
-                </ul>
-            </div>
         </section>
+
+
+        
         <section class="endQuizz">
             <div class="endQuizz-box">
                 <span class="answerQuizz">
@@ -112,29 +84,21 @@
         </section>   
         
  <!-- PAGE3-2: Tela de Criação de Perguntas Quizz  -->
-        <section class ="createQuestions hidden">
-            <section class ="start"> 
-                <p class="titles"> Crie suas perguntas </p>
-                <ul class ="create-questions-box">
+ <section class ="createQuestions hidden">
+    <section class ="start"> 
+        <p class="titles"> Crie suas perguntas </p>
+        <ul class ="create-questions-box">
             
-                </ul>
-                <button class="next-to-createLevels" onclick="verifyQuestionCreation()"> Prosseguir para criar níveis</button>
-            </section>
-        </section> 
+        </ul>
+        <button class="next-to-createLevels" onclick="verifyQuestionCreation()"> Prosseguir para criar níveis</button>
+    </section>
+</section> 
 <!-- PAGE3-3: Tela de Criação de Niveis Quizz  -->
 <section class ="createLevels hidden">
     <section class ="start"> 
         <p class="titles"> Agora, decida os níveis </p>
         <ul class ="create-levels-box">
-            <button class ="collapsible" onclick ="colapse()">Nível ${i}</button>
-        <li class ="levelNumber${i}">
 
-            <input type="text" class="level-title-1" placeholder="Título do nível"> </input>
-            <input type="number" min ="0" max ="100" class="min-score-1" placeholder="% de acerto minima"> </input>
-            <input type="text" class="level-URL-Image-1" placeholder="URL da imagem do nível"> </input>
-            <input type="text" class="level-description-1" placeholder="descrição do nível"> </input>
-
-        </li>
         </ul>
 
         <button class="next-to-quizzReady" onclick="verifyLevelCreation()"> Finalizar Quizz</button>
@@ -142,17 +106,16 @@
 </section>
 
 <!-- PAGE3-4: Tela de Criação de Quizz Pronto -->
-        <section class ="quizzSucess hidden">
-            <section class ="start"> 
-                <p class="titles">Seu quizz está pronto!</p>
-                <span class="ImgSucess">
-                    <p>Faz o urro!?</p>
-                    <img src="https://cdn.dicionariopopular.com/imagens/faz-o-urro-og.jpg"/>
-                </span>
-                <button class="start-quizz" onclick="verifyQuizzCreation()">Acessar Quizz</button>
-                <button class="home" onclick="verifyQuizzCreation()">Voltar para home</button>
-            </section>
-        </section>
+<section class ="quizzSucess hidden">
+    <section class ="start"> 
+        <p class="titles"> Seu quizz está pronto! </p>
+        <img src="quizzURL" alt="">
+
+
+        <button class="start-quizz" onclick="verifyQuizzCreation()">Acessar Quizz</button>
+        <button class="home" onclick="verifyQuizzCreation()">voltar para home</button>
+    </section>
+</section>
 
 
     </main>
@@ -161,7 +124,7 @@
     </footer>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="JS/scripts.js"></script>
 </body>
 </html>
