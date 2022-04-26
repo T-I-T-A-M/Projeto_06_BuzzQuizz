@@ -1,6 +1,6 @@
 .pageTwo {
     width: 100%;
-    height: 1080px;
+    height: 100%;
 
     margin-top: 69px;
     padding: 0;
@@ -107,7 +107,9 @@
 
 .endQuizz {
     width: 759px;
+    height: 100%;
     padding: 15px;
+    margin-top: 25px;
     margin-bottom: 35px;
 
     background-color: #FFFFFF;
@@ -120,6 +122,9 @@
 }
 
 .endQuizz-box {
+    width: 100%;
+    height: 100%;
+    padding: 0 0 15px 0;
     display: flex;
     flex-direction: column;
 }
@@ -176,9 +181,6 @@
 }
 
 
-
-
-
 @media (max-width: 759px) {
 
     .theQuizz {
@@ -208,5 +210,42 @@
     
         background-color: white;
     }
+
+    .endQuizz {
+        width: 100%;
+    }
+
+    .endQuizz-box {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .answerQuizz {
+        width: 100%;
+    }
+
+    .img-answer {
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .img-answer img {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        padding-top: 15px;
+    }
+    
+    .img-answer p {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        padding-top: 15px;
+    }   
 
 }
