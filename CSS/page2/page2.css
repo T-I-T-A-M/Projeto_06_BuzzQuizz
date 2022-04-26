@@ -11,6 +11,13 @@
     align-items: center;
 }
 
+.theQuizz{
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+}
+
+
 .tittle-img {
     width: 100%;
     height: 227px;

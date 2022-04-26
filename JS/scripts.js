@@ -5,7 +5,7 @@ const TITTLEMAXSIZE = 65;
 const QUESTIONMINSIZE = 3;
 const LEVELMINSIZE = 2;
 const HEXADECIMALVALUE = 6;
-const API = "https://mock-api.driven.com.br/api/v6/buzzquizz";
+
 
 
 let quizzTittle
@@ -14,11 +14,9 @@ let quizzQuestions
 let quizzLevels
 
 
+getAllQuizz()
 
 
-
-
-// const promise = axios.get(`${API}/quizzes`)
 
 function verifyQuizzCreation (){
 
@@ -39,7 +37,7 @@ function verifyQuizzCreation (){
 }
 
 function showPage1 (){
-    console.log("Pagina 1 Aaparecendo")
+    console.log("Pagina 1 Aparecendo")
     document.querySelector(".pageOne").classList.remove("hidden")
 }
 
@@ -49,6 +47,11 @@ function hidePage1 (){
     document.querySelector(".pageOne").classList.add("hidden")
 }
 
+function showPage2 () {
+    hidePage1()
+    console.log ("Pagina 1 Desaparecendo")
+    document.querySelector(".pageTwo").classList.remove("hidden")
+}
 
 function showPage3_1 (){
     hidePage1()
@@ -219,3 +222,52 @@ function createButton () {
  }
 }
 createButton();
+
+
+
+
+
+
+
+function getAllQuizz(){
+
+    let promise = axios.get("https://mock-api.driven.com.br/api/v6/buzzquizz/quizzes")
+    promise.then(renderAllQuizz)
+
+
+    function renderAllQuizz (Quizzes){
+        console.log("renderizando todos os quizzes")
+        console.log (Quizzes)
+
+        for (let i =0; i < Quizzes.data.length; i++){
+
+            quizzTittle = Quizzes.data[i].title
+            quizzURL = Quizzes.data[i].image
+            let quizzId = Quizzes.data[i].id
+
+            console.log("Laço para renderizar")
+            document.querySelector("ul.allListQuizz").innerHTML +=`
+            <li class="click Quizz" id="${quizzId}" onclick="openQuizz(this)">
+                <p>${quizzTittle}</p>
+                <img src="${quizzURL}">
+            </li>`
+
+    }
+}
+}
+
+function openQuizz(selectedQuizz){
+    showPage2()
+    console.log (selectedQuizz.id)
+
+    const promise = axios.get(`https://mock-api.driven.com.br/api/v6/buzzquizz/quizzes/${selectedQuizz.id}`)
+    promise.then(renderSelectedQuizz)
+
+    function renderSelectedQuizz (Quizz){
+
+        for (let i=0; i < Quizz.data.questions.length; i++){}
+
+
+
+    }
+}
