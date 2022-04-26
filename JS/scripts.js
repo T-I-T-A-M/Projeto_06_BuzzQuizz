@@ -273,7 +273,7 @@ function openQuizz(selectedQuizz){
 
 
         document.querySelector("section.tittle-img").innerHTML =`
-        <img class ="selectedQuizzImage" src="${selectedimage}"/>")`
+        <img class ="selectedQuizzImage" src="${selectedimage}"/>`
 
         document.querySelector("section.theQuizz").innerHTML = `
         <span class="question-box">
