@@ -219,3 +219,8 @@ function createButton () {
  }
 }
 createButton();
+
+function openQuizz(){
+    document.querySelector(".pageOne").classList.add("hidden");
+    document.querySelector(".pageTwo").classList.remove("hidden");
+}
