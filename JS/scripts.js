@@ -286,17 +286,14 @@ function openQuizz(selectedQuizz){
                for (let j=0; j < selectedQuestions[j].answers.length; j++){
               
                 
-            document.querySelector("div.quizz-box").innerHTML += `
-            
-            <div class="quizz-box">
-                
+                 document.querySelector("div.quizz-box").innerHTML += `
+                            
                 <ul class="images-box">
                     <li class="box-img ${selectedQuestions[i].answers[j].isCorrectAnswer}">
                         <img src="${selectedQuestions[i].answers[j].image}"/>
                         <h5>${selectedQuestions[i].answers[j].text}</h5>
                     </li>
                 </ul>
-            </div>
             `
 
         }
