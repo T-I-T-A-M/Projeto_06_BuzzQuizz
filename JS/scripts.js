@@ -4,7 +4,9 @@ const TITTLEMINSIZE = 20;
 const TITTLEMAXSIZE = 65;
 const QUESTIONMINSIZE = 3;
 const LEVELMINSIZE = 2;
+const HEXADECIMALVALUE = 6;
 const API = "https://mock-api.driven.com.br/api/v6/buzzquizz";
+
 
 let quizzTittle
 let quizzURL
@@ -106,29 +108,29 @@ function renderQuestionForms (){
 }
 
 function verifyQuestionCreation (){
-
+    let contador = 0;
 
     for ( let i=1; i<= quizzQuestions; i++){
-
+        console.log ("Verificacao das perguntas iniciado")
+        
         let questionText = document.querySelector(`.question-text-${i}`).value
         let questionBackgroundColor = document.querySelector(`.question-background-color-${i}`).value
         let correctAnswer = document.querySelector(`.correctAnswer-${i}`).value
         let correctImage = document.querySelector(`.correctImage-${i}`).value
         let incorrectAnswer = document.querySelector(`.incorrectAnswer-${i}-One`).value
+        let incorrectImage = document.querySelector(`.incorrectImage-${i}-One`).value
 
-        if ((questionText >= TITTLEMINSIZE)  && (questionBackgroundColor.contains("http")) &&  correctAnswer && correctImage && incorrectAnswer){
 
-            console.log ("Tudo certo no quizz questions")
-        } alert("As perguntas ainda não estão corretas") 
-        console.log ("As perguntas ainda não estão corretas")
-
+        
+        if ((questionText.length >= TITTLEMINSIZE)  && (questionBackgroundColor.length === HEXADECIMALVALUE) && (questionBackgroundColor.includes("#")) &&  correctAnswer && correctImage && incorrectAnswer && incorrectImage){
+            contador += 1
+            console.log (contador)
+        } 
     }
     
-
+    if (contador === quizzQuestions){
+        console.log ("Tudo certo, vc colocou as perguntas")
+    } else {
+        alert ("OPA OPA vc esqueceu de preencher corretamente")
+    }
 }
-
-function colapse (botao) {
-    botao
-}
-
-
