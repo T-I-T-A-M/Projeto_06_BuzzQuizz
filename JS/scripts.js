@@ -132,3 +132,13 @@ function colapse (botao) {
 }
 
 
+
+function createButton () {
+    const myQuizzes = document.querySelector(".myListQuizz li")
+
+    if (myQuizzes !== null) {
+        document.querySelector(".createQuizBox").classList.add("hidden");
+        document.querySelector(".myQuizzesContainer").classList.remove("hidden");
+ }
+}
+createButton();
