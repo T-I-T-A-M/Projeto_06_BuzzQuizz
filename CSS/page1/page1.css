@@ -9,6 +9,10 @@
     cursor: pointer;
 }
 
+button {
+    cursor: pointer;
+}
+
 a {
     text-decoration: none;
     color: inherit;
@@ -237,6 +241,10 @@ strong {
     main {
         width: 100%;
         margin-top: 99px;
+    }
+
+    .createQuizBox {
+        width: 340px;
     }
 
     .pageOne li {

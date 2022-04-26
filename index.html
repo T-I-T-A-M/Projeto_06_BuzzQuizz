@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="CSS/page2/page2.css">
     <link rel="stylesheet" href="CSS/page3/page3-1.css">
     <link rel="stylesheet" href="CSS/page3/page3-2.css">
+    <link rel="stylesheet" href="CSS/page3/page3-4.css">
 </head>
 <body>
     <header>
@@ -109,52 +110,53 @@
         </section>   
         
  <!-- PAGE3-2: Tela de Criação de Perguntas Quizz  -->
- <section class ="createQuestions hidden">
-    <section class ="start"> 
-        <p class="titles"> Crie suas perguntas </p>
-        <ul class ="create-questions-box">
+        <section class ="createQuestions hidden">
+            <section class ="start"> 
+                <p class="titles"> Crie suas perguntas </p>
+                <ul class ="create-questions-box">
             
-        </ul>
-        <button class="next-to-createLevels" onclick="verifyQuestionCreation()"> Prosseguir para criar níveis</button>
-    </section>
-</section> 
+                </ul>
+                <button class="next-to-createLevels" onclick="verifyQuestionCreation()"> Prosseguir para criar níveis</button>
+            </section>
+        </section> 
 <!-- PAGE3-3: Tela de Criação de Niveis Quizz  -->
-<section class ="createLevels hidden">
-    <section class ="start"> 
-        <p class="titles"> Crie suas perguntas </p>
-        <ul class ="create-levels-box">
+        <section class ="createLevels hidden">
+            <section class ="start"> 
+                <p class="titles"> Crie suas perguntas </p>
+                <ul class ="create-levels-box">
 
-            <button class ="collapsible" onclick ="colapse()">Nivel 1</button>
-            <li class ="levelNumber$">
+                    <button class ="collapsible" onclick ="colapse()">Nivel 1</button>
+                    <li class ="levelNumber$">
 
-                <input type="text" class="level-title-${i}" placeholder="Título do nível"> </input>
-                <input type="text" class="min-score-${i}" placeholder="% de acerto minima"> </input>
-                <input type="text" class="level-URL-Image-${i}" placeholder="URL da imagem do nível"> </input>
-                <input type="text" class="level-description-${i}" placeholder="descrição do nível"> </input>
+                        <input type="text" class="level-title-${i}" placeholder="Título do nível"> </input>
+                        <input type="text" class="min-score-${i}" placeholder="% de acerto minima"> </input>
+                        <input type="text" class="level-URL-Image-${i}" placeholder="URL da imagem do nível"> </input>
+                        <input type="text" class="level-description-${i}" placeholder="descrição do nível"> </input>
 
-            </li>
+                    </li>
             
-        </ul>
+                </ul>
 
-        <button class="next-to-quizzReady" onclick="verifyQuizzCreation()"> Finalizar Quizz</button>
-    </section>
-</section>
+                <button class="next-to-quizzReady" onclick="verifyQuizzCreation()"> Finalizar Quizz</button>
+            </section>
+        </section>
 
 <!-- PAGE3-4: Tela de Criação de Quizz Pronto -->
-<section class ="quizzSucess hidden">
-    <section class ="start"> 
-        <p class="titles"> Seu quizz está pronto! </p>
-        <img src="quizzURL" alt="">
-
-
-        <button class="start-quizz" onclick="verifyQuizzCreation()">Acessar Quizz</button>
-        <button class="home" onclick="verifyQuizzCreation()">voltar para home</button>
-    </section>
-</section>
+        <section class ="quizzSucess hidden">
+            <section class ="start"> 
+                <p class="titles">Seu quizz está pronto!</p>
+                <span class="ImgSucess">
+                    <p>Faz o urro!?</p>
+                    <img src="https://cdn.dicionariopopular.com/imagens/faz-o-urro-og.jpg"/>
+                </span>
+                <button class="start-quizz" onclick="verifyQuizzCreation()">Acessar Quizz</button>
+                <button class="home" onclick="verifyQuizzCreation()">Voltar para home</button>
+            </section>
+        </section>
 
 
     </main>
-    <footer>
+    <footer class="hidden">
         <p>Desenvolvido por: <a href="https://github.com/dorigoluiz" target="_blank"><strong>NANO</strong></a> & <a href="https://github.com/T-I-T-A-M/" target="_blank"><strong>TITAM</strong></a>.</p>
     </footer>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm"></script>

@@ -16,6 +16,7 @@ input {
     justify-content: center;
     width:100%;
     height:100%;
+    text-align: center;
 }
 
 .createQuizz{
@@ -36,7 +37,7 @@ input {
 
 }
 
-.start  div{
+.start div{
     display:flex;
     flex-direction: column;
     align-items: center;
@@ -60,7 +61,6 @@ input {
     height: 54px;
     padding:5px;
     font-size: 23px;
-    cursor:pointer;
 }
 
 ::placeholder {
