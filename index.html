@@ -21,7 +21,7 @@
             <h1>BuzzQuizz</h1>
         </a>
     </header>
-    <main class="pageOne">
+    <main class="pageOne hidden">
         <!-- PAGE1: Sessão de Criação-->
         <section class="createQuizBox">
             <p>Você não criou nenhum quizz ainda :(</p>
@@ -120,26 +120,24 @@
             </section>
         </section> 
 <!-- PAGE3-3: Tela de Criação de Niveis Quizz  -->
-        <section class ="createLevels hidden">
-            <section class ="start"> 
-                <p class="titles"> Crie suas perguntas </p>
-                <ul class ="create-levels-box">
+<section class ="createLevels">
+    <section class ="start"> 
+        <p class="titles"> Agora, decida os níveis </p>
+        <ul class ="create-levels-box">
+            <button class ="collapsible" onclick ="colapse()">Nível ${i}</button>
+        <li class ="levelNumber${i}">
 
-                    <button class ="collapsible" onclick ="colapse()">Nivel 1</button>
-                    <li class ="levelNumber$">
+            <input type="text" class="level-title-1" placeholder="Título do nível"> </input>
+            <input type="number" min ="0" max ="100" class="min-score-1" placeholder="% de acerto minima"> </input>
+            <input type="text" class="level-URL-Image-1" placeholder="URL da imagem do nível"> </input>
+            <input type="text" class="level-description-1" placeholder="descrição do nível"> </input>
 
-                        <input type="text" class="level-title-${i}" placeholder="Título do nível"> </input>
-                        <input type="text" class="min-score-${i}" placeholder="% de acerto minima"> </input>
-                        <input type="text" class="level-URL-Image-${i}" placeholder="URL da imagem do nível"> </input>
-                        <input type="text" class="level-description-${i}" placeholder="descrição do nível"> </input>
+        </li>
+        </ul>
 
-                    </li>
-            
-                </ul>
-
-                <button class="next-to-quizzReady" onclick="verifyQuizzCreation()"> Finalizar Quizz</button>
-            </section>
-        </section>
+        <button class="next-to-quizzReady" onclick="verifyLevelCreation()"> Finalizar Quizz</button>
+    </section>
+</section>
 
 <!-- PAGE3-4: Tela de Criação de Quizz Pronto -->
         <section class ="quizzSucess hidden">
