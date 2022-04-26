@@ -264,8 +264,49 @@ function openQuizz(selectedQuizz){
     promise.then(renderSelectedQuizz)
 
     function renderSelectedQuizz (Quizz){
+        console.log("renderizando quizz selecionado")   
+        let selectedtitle = Quizz.data.title
+            let selectedimage = Quizz.data.image
+            let selectedQuestions = Quizz.data.questions
+            let selectedLevels = Quizz.data.levels
 
-        for (let i=0; i < Quizz.data.questions.length; i++){}
+        document.querySelector("section.theQuizz").innerHTML = `
+        <img class ="selectedQuizzImage" src="${selectedimage}"/>
+        <span class="question-box">
+        <h6>${selectedtitle}</h6>
+        </span>
+        <div class="quizz-box"> </div>`
+
+        for (let i=0; i < selectedQuestions.length; i++){
+               
+              
+                
+            document.querySelector("div .quizz-box").innerHTML += `
+            
+            <div class="quizz-box">
+                
+                <ul class="images-box">
+                    <li class="box-img">
+                        <img src="https://s2.glbimg.com/nvjFq8VRjyrpdQqaOeywz-5DFwY=/e.glbimg.com/og/ed/f/original/2021/08/27/captura_de_tela_2021-08-27_as_11.01.15.png"/>
+                        <h5>Catiorríneo1</h5>
+                    </li>
+                    <li class="box-img">
+                        <img src="https://s2.glbimg.com/nvjFq8VRjyrpdQqaOeywz-5DFwY=/e.glbimg.com/og/ed/f/original/2021/08/27/captura_de_tela_2021-08-27_as_11.01.15.png"/>
+                        <h5>Catiorríneo2</h5>
+                    </li>
+                    <li class="box-img">
+                        <img src="https://s2.glbimg.com/nvjFq8VRjyrpdQqaOeywz-5DFwY=/e.glbimg.com/og/ed/f/original/2021/08/27/captura_de_tela_2021-08-27_as_11.01.15.png"/>
+                        <h5>Catiorríneo3</h5>
+                    </li>
+                    <li class="box-img">
+                        <img src="https://s2.glbimg.com/nvjFq8VRjyrpdQqaOeywz-5DFwY=/e.glbimg.com/og/ed/f/original/2021/08/27/captura_de_tela_2021-08-27_as_11.01.15.png"/>
+                        <h5>Catiorríneo4</h5>
+                    </li>
+                </ul>
+            </div>
+            `
+
+        }
 
 
 
