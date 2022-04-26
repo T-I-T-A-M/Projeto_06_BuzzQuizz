@@ -70,6 +70,33 @@ function showPage3_2 (){
     renderQuestionForms()
 }
 
+function hidePage3_2 (){
+    console.log("Pagina 3_2 Sumindo")
+    document.querySelector(".createQuestions").classList.add("hidden")
+}
+
+function showPage3_3 (){
+    hidePage3_2() 
+    console.log("Pagina 3_3 Aparecendo")
+    document.querySelector(".createLevels").classList.remove("hidden")
+    renderLevelsForms()
+}
+
+function hidePage3_3 (){
+    console.log("Pagina 3_3 Sumindo")
+    document.querySelector(".createLevels").classList.add("hidden")
+}
+
+function showPage3_4 (){
+    hidePage3_3() 
+    console.log("Pagina 3_4 Aparecendo")
+    document.querySelector(".quizzSucess").classList.remove("hidden")
+    
+}
+
+
+
+
 
 function renderQuestionForms (){
     console.log("renderizando formulario de perguntas")
@@ -78,10 +105,8 @@ function renderQuestionForms (){
 
     for (let i=1; i <= quizzQuestions; i++ ){
     QuestionBoxs.innerHTML += `
-    <li class ="questionNumber$">
-    
     <button class ="collapsible" onclick ="colapse()">Pergunta ${i}</button>
-    <li class ="questionNumber$">
+    <li class ="questionNumber${i}">
 
 
         <input type="text" class="question-text-${i}" placeholder="Texto da Pergunta"> </input>
@@ -108,10 +133,11 @@ function renderQuestionForms (){
 }
 
 function verifyQuestionCreation (){
+    console.log ("verificando questoes criadas")
     let contador = 0;
 
     for ( let i=1; i<= quizzQuestions; i++){
-        console.log ("Verificacao das perguntas iniciado")
+        console.log ("laço de Verificacao das perguntas iniciado")
         
         let questionText = document.querySelector(`.question-text-${i}`).value
         let questionBackgroundColor = document.querySelector(`.question-background-color-${i}`).value
@@ -123,14 +149,73 @@ function verifyQuestionCreation (){
 
         
         if ((questionText.length >= TITTLEMINSIZE)  && (questionBackgroundColor.length === HEXADECIMALVALUE) && (questionBackgroundColor.includes("#")) &&  correctAnswer && correctImage && incorrectAnswer && incorrectImage){
-            contador += 1
+            contador++
             console.log (contador)
         } 
     }
     
     if (contador === quizzQuestions){
-        console.log ("Tudo certo, vc colocou as perguntas")
-    } else {
-        alert ("OPA OPA vc esqueceu de preencher corretamente")
+        showPage3_3()
+    } else {alert ("Preencha os dados corretamente")}
+    
+}
+
+function renderLevelsForms(){
+    console.log("renderizando formulario dos niveis")
+    const levelBoxs = document.querySelector("ul.create-levels-box")
+
+    for (let i=1; i<= quizzLevels; i++){
+        levelBoxs.innerHTML +=   `
+        <button class ="collapsible" onclick ="colapse()">Nível ${i}</button>
+        <li class ="levelNumber${i}">
+
+            <input type="text" class="level-title-${i}" placeholder="Título do nível"> </input>
+            <input type="number" min ="0" max ="100" maxlength ="3" class="min-score-${i}" placeholder="% de acerto minima"> </input>
+            <input type="text" class="level-URL-Image-${i}" placeholder="URL da imagem do nível"> </input>
+            <input type="text" class="level-description-${i}" placeholder="descrição do nível"> </input>
+
+        </li>`
     }
 }
+
+function verifyLevelCreation (){
+    console.log ("verificando niveis criados")
+    let contador = 0;
+    let minimalScoreNeed=false
+
+    for ( let i=1; i<= quizzQuestions; i++){
+        console.log ("Verificacao das perguntas iniciado")
+        
+        let levelTitle = document.querySelector(`.level-title-${i}`).value
+        let minScore = Number(document.querySelector(`.min-score-${i}`).value)
+        let levelImage = document.querySelector(`.level-URL-Image-${i}`).value
+        let levelDescription = document.querySelector(`.level-description-${i}`).value
+
+        
+        if ((levelTitle.length >= 10)  && (minScore <= 100) && (minScore >= 0) &&  levelImage.includes("http") && (levelDescription.length >=30) ){
+            contador++
+            console.log (contador)
+        }
+
+        if (minScore===0){
+            minimalScoreNeed = true
+        }
+    }
+    
+    if ((contador === quizzLevels) && minimalScoreNeed ){
+        
+        showPage3_4()
+    } else {alert ("Preencha os dados corretamente")}
+}
+
+
+
+function createButton () {
+    const myQuizzes = document.querySelector(".myListQuizz li")
+
+    if (myQuizzes !== null) {
+        document.querySelector(".createQuizBox").classList.add("hidden");
+        document.querySelector(".myQuizzesContainer").classList.remove("hidden");
+ }
+}
+createButton();
